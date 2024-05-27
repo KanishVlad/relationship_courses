@@ -55,3 +55,63 @@ body {
   font-weight: 700;
   line-height: 30px;
 }
+
+.card {
+  max-width: 1400px;
+  width: 100%;
+  background-color: $card-purple;
+  border-radius: 40px;
+  border: 5px solid $text-dark;
+  padding: 40px 30px;
+  display: flex;
+  justify-content: space-between;
+
+  &__bottom {
+    margin-bottom: 25px;
+  }
+
+  &--pink {
+    background-color: $card-pink;
+  }
+
+  &__img {
+    margin-right: 40px;
+  }
+
+  &__title {
+    color: $text-dark;
+    margin-bottom: 20px;
+  }
+
+  &__content-top {
+    margin-bottom: 80px;
+  }
+
+  &__content-text {
+    font-weight: 400;
+    max-width: 1026px;
+    width: 100%;
+    line-height: 30px;
+  }
+
+  &__content-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 120px;
+  }
+
+  &__content-start,
+  &__content-duration {
+    font-weight: 600;
+    line-height: 30px;
+  }
+
+  &__content-data {
+    color: $data-color;
+  }
+}
+
+.card:not(:last-child) {
+  margin-bottom: 30px;
+}
