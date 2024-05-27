@@ -25,6 +25,10 @@ body {
 .border {
   height: 8px;
   background-color: $text-dark;
+
+  &--yellow {
+    background-color: $border-yellow;
+  }
 }
 
 .section {

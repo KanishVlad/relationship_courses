@@ -1,0 +1,23 @@
+.footer {
+
+  padding: 100px 0;
+  background-color: $text-dark;
+
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 15px 42px;
+    margin: 0 auto;
+  }
+
+  &__link {
+    color: $text-white;
+    font-size: 16px;
+  }
+}
