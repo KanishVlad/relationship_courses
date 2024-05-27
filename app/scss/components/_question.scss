@@ -1,0 +1,30 @@
+.question {
+  background-color: $bg-form;
+  padding: 45px 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    margin-right: 30px;
+  }
+
+  &__content-title {
+    font-size: 36px;
+    font-weight: 400;
+    color: $text-white;
+    margin-bottom: 32px;
+  }
+
+  &__content-text {
+    font-size: 24px;
+    font-weight: 400;
+    color: $text-white;
+    max-width: 541px;
+    width: 100%;
+  }
+
+}
