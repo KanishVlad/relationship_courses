@@ -45,3 +45,13 @@ body {
   text-align: center;
   margin-bottom: 40px;
 }
+
+.btn {
+  padding: 13px 34px;
+  background-color: $btn;
+  border-radius: 10px;
+  border: 2px solid $text-dark;
+  color: $text-white;
+  font-weight: 700;
+  line-height: 30px;
+}
