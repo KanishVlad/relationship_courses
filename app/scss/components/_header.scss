@@ -1,0 +1,28 @@
+.header {
+  padding-top: 30px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &__items {
+    display: flex;
+    align-items: center;
+    gap: 53px;
+    margin: 0 auto;
+  }
+
+  &__item {
+    gap: 53px;
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+}
+
+
