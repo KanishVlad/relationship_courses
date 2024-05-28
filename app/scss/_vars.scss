@@ -11,3 +11,16 @@ $card-pink: #FFE3E3;
 $bg-form: #282323;
 $form-color: #FAFFFC;
 $border-yellow: #FFE500;
+$link-hover: #1814D9;
+
+$pc: 1200;
+$tb-2: 992;
+$tb: 768;
+$ph: 576;
+$phm: 444;
+
+@mixin r($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+  }
+}

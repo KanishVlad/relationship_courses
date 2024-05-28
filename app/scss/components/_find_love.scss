@@ -6,6 +6,21 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 25px;
+
+    @include r($tb-2) {
+      justify-content: center;
+      padding-bottom: 20px;
+    }
+
+    @include r($tb) {
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 15px;
+    }
+
+    @include r($ph) {
+      padding-bottom: 10px;
+    }
   }
 
   &__container {
@@ -13,6 +28,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-right: 10px;
+    max-width: 450px;
+    width: 100%;
+
+    @include r($tb-2) {
+      max-width: 365px;
+      width: 100%;
+    }
+
   }
 
 
@@ -23,6 +47,29 @@
     width: 100%;
     text-align: center;
     margin-bottom: 42px;
+
+    @include r($pc) {
+      font-size: 36px;
+      margin-bottom: 15px;
+      line-height: 40px;
+    }
+
+    @include r($tb-2) {
+      font-size: 28px;
+      line-height: 30px;
+    }
+
+    @include r($tb) {
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 15px;
+    }
+
+    @include r($ph) {
+      font-size: 22px;
+      line-height: 25px;
+      margin-bottom: 10px;
+    }
   }
 
   &__text {
@@ -32,16 +79,54 @@
     max-width: 340px;
     width: 100%;
     margin-bottom: 42px;
+
+    @include r($pc) {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    @include r($tb-2) {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+
   }
 
   &__content {
     display: flex;
     gap: 50px;
 
+    @include r($pc) {
+      gap: 20px;
+    }
+
+    @include r($tb-2) {
+      gap: 10px;
+    }
+
   }
 
   &__img {
     border-radius: 30px;
+    width: 330px;
+
+
+    @include r($pc) {
+      width: 255px;
+      height: 300px;
+    }
+
+    @include r($tb-2) {
+      width: 180px;
+      height: 240px;
+    }
+
+    @include r($ph) {
+      width: 145px;
+      height: 200px;
+    }
+
   }
 
   &__btn {
@@ -50,7 +135,30 @@
     border: 3px solid $border-color-btn;
     color: $text-white;
     padding: 10px 38px;
+    transition: background-color 0.7s, border-color 0.7s, color 0.7s, opacity 0.7s;
+
+    &:hover {
+      background-color: $btn;
+      border-color: $accent;
+    }
+
+    &:focus {
+      background-color: $text-white;
+      border-color: $text-dark;
+      color: $text-dark;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    @include r($tb) {
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 10px;
+      padding: 5px 27px;
+    }
   }
 
-  
+
 }

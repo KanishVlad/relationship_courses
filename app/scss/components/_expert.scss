@@ -5,6 +5,11 @@
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
+
+    @include r($ph) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__card {
@@ -13,11 +18,42 @@
     width: 100%;
     border-radius: 30px;
     margin-right: 45px;
+
+    @include r($tb-2) {
+      margin-right: 25px;
+    }
+
+    @include r($tb) {
+      max-width: 275px;
+    }
+
+    @include r($ph) {
+      max-width: 175px;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
   }
 
   &__img {
     border-radius: 20px;
     margin-bottom: 20px;
+
+    @include r($tb-2) {
+      margin-bottom: 15px;
+    }
+
+    @include r($tb) {
+      max-width: 275px;
+      max-height: 253px;
+    }
+
+    @include r($ph) {
+      max-width: 175px;
+      max-height: 163px;
+    }
+
+
   }
 
   &__title {
@@ -27,6 +63,18 @@
     color: $text-white;
     padding-left: 10px;
     margin-bottom: 20px;
+
+    @include r($tb-2) {
+      line-height: 20px;
+      margin-bottom: 15px;
+    }
+
+    @include r($ph) {
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-align: center;
+      padding-left: 0;
+    }
   }
 
   &__info {
@@ -35,6 +83,22 @@
     color: $text-white;
     padding-left: 10px;
     padding-bottom: 40px;
+
+    @include r($tb-2) {
+      padding-bottom: 25px;
+    }
+
+    @include r($tb) {
+      padding-bottom: 15px;
+    }
+
+    @include r($ph) {
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+      padding-left: 0;
+      padding-bottom: 10px;
+    }
   }
 
   &__container {
@@ -51,6 +115,19 @@
     border-radius: 20px;
     padding: 10px 25px;
     margin-bottom: 30px;
+
+    @include r($tb-2) {
+      padding: 20px 25px;
+      margin-bottom: 25px;
+    }
+
+    @include r($tb) {
+      margin-bottom: 20px;
+    }
+
+    @include r($ph) {
+      margin-bottom: 10px;
+    }
   }
 
   &__text {
@@ -59,10 +136,33 @@
     font-weight: 700;
     line-height: 40px;
     text-align: center;
+
+    @include r($tb-2) {
+      font-size: 20px;
+      line-height: 20px;
+    }
+
+    @include r($tb) {
+      font-size: 18px;
+    }
+
+    @include r($ph) {
+      font-size: 16px;
+    }
+
+
   }
 
   &__text:not(:last-child) {
     margin-bottom: 20px;
+
+    @include r($tb) {
+      margin-bottom: 15px;
+    }
+
+    @include r($tb) {
+      margin-bottom: 10px;
+    }
   }
 
 

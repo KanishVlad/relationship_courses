@@ -7,6 +7,7 @@
 
   padding-bottom: 10px;
 
+
   &__slide {
     max-width: 400px;
     width: 100%;
@@ -16,6 +17,16 @@
     padding: 14px 0 25px;
     margin-right: 33px;
     min-height: 260px;
+
+    @include r($pc) {
+      max-width: 302px;
+      margin-right: 25px;
+    }
+
+    @include r($tb-2) {
+      max-width: 222px;
+      padding: 14px 0 20px;
+    }
   }
 
   &__border {
@@ -27,12 +38,22 @@
     margin-bottom: 5px;
     font-size: 20px;
     font-weight: 700;
+
+    @include r($tb-2) {
+      padding:0 15px;
+    }
+
+
   }
 
   &__subtitle {
     padding: 0 20px;
     margin-bottom: 5px;
     font-weight: 500;
+
+    @include r($tb-2) {
+      padding:0 15px;
+    }
   }
 
   &__text {
@@ -43,6 +64,16 @@
     line-height: 30px;
     max-width: 350px;
     width: 100%;
+
+    @include r($pc) {
+      max-width: 260px;
+    }
+
+    @include r($tb-2) {
+      padding:0 9px;
+      max-width: 203px;
+      
+    }
   }
 
   &__pagination {
@@ -60,6 +91,9 @@
 
 .swiper-wrapper {
   margin-bottom: 30px;
+  @include r($tb-2) {
+      margin-bottom: 20px;
+    }
 }
 
 
@@ -72,6 +106,20 @@
   border: 3px solid $text-dark;
   width: 60px;
   height: 60px;
+  transition: background-color 0.7s, border-color 0.7s, opacity 0.7s;
+
+  &:hover {
+    background-color: $border-yellow;
+  }
+
+  &:focus {
+    background-color: $card-pink;
+    border-color: $data-color;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
 }
 
 .swiper-button-prev {
@@ -88,6 +136,7 @@
   z-index: 10;
   left: 23%;
 }
+
 
 .swiper-button-next {
   position: relative;

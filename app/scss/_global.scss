@@ -15,6 +15,25 @@ body {
   flex-direction: column;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.burger,
+.burger__line {
+  display: none;
+}
+
 .container {
   max-width: 1400px;
   width: 100%;
@@ -29,10 +48,44 @@ body {
   &--yellow {
     background-color: $border-yellow;
   }
+
+  @include r($tb) {
+    height: 5px;
+  }
+
+}
+
+.line {
+  height: 5px;
+  background-color: $text-dark;
+  display: none;
+  width: 100%;
+
+  @include r($tb) {
+    position: fixed;
+    display: block;
+  }
+
 }
 
 .section {
   padding-bottom: 70px;
+
+  @include r($pc) {
+    padding-bottom: 60px;
+  }
+
+  @include r($tb-2) {
+    padding-bottom: 50px;
+  }
+
+  @include r($tb) {
+    padding-bottom: 40px;
+  }
+
+  @include r($ph) {
+    padding-bottom: 30px;
+  }
 }
 
 .title {
@@ -40,6 +93,25 @@ body {
   font-weight: 700;
   text-align: center;
   margin-bottom: 30px;
+
+  @include r($pc) {
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
+
+  @include r($tb-2) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  @include r($tb) {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  @include r($ph) {
+    font-size: 18px;
+  }
 }
 
 .title-h3 {
@@ -48,17 +120,93 @@ body {
   font-weight: 700;
   text-align: center;
   margin-bottom: 40px;
+
+  @include r($pc) {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  @include r($tb-2) {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  @include r($tb) {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
 }
 
 .btn {
   padding: 13px 34px;
   background-color: $btn;
   border-radius: 10px;
-  border: 2px solid $text-dark;
+  border: 3px solid transparent;
   color: $text-white;
   font-weight: 700;
   line-height: 30px;
+  transition: background-color 0.7s, border-color 0.7s, opacity 0.7s;
+
+  &:hover {
+    background-color: $accent;
+  }
+
+  &:focus {
+    background-color: $bg-block;
+    border-color: $text-dark;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
+
+.link {
+  transition: color 0.7s, border-color 0.7s, opacity 0.7s;
+  border-bottom: 3px solid transparent;
+
+  &:hover {
+    color: $link-hover;
+  }
+
+  &:focus {
+    border-color: $text-dark;
+  }
+
+  &--footer:focus {
+    border-color: $text-white;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.logo {
+  outline: 3px solid transparent;
+  border-radius: 50px;
+  margin-right: 5px;
+  transition: outline-color 0.7s, opacity 0.7s;
+
+
+  &:hover {
+    outline-color: $text-dark;
+  }
+
+  &:focus {
+    outline-color: $accent;
+  }
+
+  &--footer:hover {
+    outline-color: $text-white;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
 
 .card {
   max-width: 1400px;
@@ -70,6 +218,12 @@ body {
   display: flex;
   justify-content: space-between;
 
+  @include r($tb-2) {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+  }
+
   &__bottom {
     margin-bottom: 25px;
   }
@@ -80,16 +234,42 @@ body {
 
   &__img {
     margin-right: 40px;
+
+    @include r($tb-2) {
+      max-width: 200px;
+      max-height: 200px;
+      margin-right: 0;
+      margin-bottom: 15px;
+
+    }
   }
 
   &__title {
     color: $text-dark;
     margin-bottom: 20px;
     text-align: left;
+
+    @include r($tb-2) {
+      margin-bottom: 15px;
+      text-align: center;
+    }
   }
 
   &__content-top {
     margin-bottom: 80px;
+
+    @include r($tb-2) {
+      margin-bottom: 25px;
+    }
+
+    @include r($tb) {
+      margin-bottom: 20px;
+    }
+
+    @include r($ph) {
+      margin-bottom: 15px;
+    }
+
   }
 
   &__content-text {
@@ -97,6 +277,10 @@ body {
     max-width: 1026px;
     width: 100%;
     line-height: 30px;
+
+    @include r($tb-2) {
+      text-align: center;
+    }
   }
 
   &__content-bottom {
@@ -104,6 +288,20 @@ body {
     align-items: center;
     justify-content: flex-start;
     gap: 120px;
+
+    @include r($tb-2) {
+      gap: 50px;
+      justify-content: center;
+    }
+
+    @include r($tb) {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    @include r($tb) {
+      gap: 10px;
+    }
   }
 
   &__content-start,
@@ -119,6 +317,18 @@ body {
 
 .card:not(:last-child) {
   margin-bottom: 30px;
+
+  @include r($tb-2) {
+    margin-bottom: 25px;
+  }
+
+  @include r($tb) {
+    margin-bottom: 15px;
+  }
+
+  @include r($ph) {
+    margin-bottom: 10px;
+  }
 }
 
 .form {
@@ -132,6 +342,18 @@ body {
   flex-direction: column;
   align-items: center;
 
+  @include r($pc) {
+    padding: 30px 20px;
+
+  }
+
+  @include r($tb-2) {
+    max-width: 556px;
+
+  }
+
+
+
   &__label {
     font-size: 24px;
     font-weight: 400;
@@ -140,6 +362,11 @@ body {
     max-width: 500px;
     width: 100%;
     margin-bottom: 30px;
+
+    @include r($pc) {
+        margin-bottom: 20px;
+    
+      }
   }
 
   &__input {
@@ -149,5 +376,22 @@ body {
     display: block;
     padding: 10px;
     font-size: 16px;
+    transition: border-color 0.7s, color 0.7s, opacity 0.7s;
+  }
+
+  &__input:hover {
+    border-color: $border-color-btn;
+  }
+
+  &__input:hover::placeholder {
+    color: $text-dark;
+  }
+
+  &__input:focus {
+    border-color: $bg-block;
+  }
+
+  &__input:active {
+    opacity: 0.5;
   }
 }

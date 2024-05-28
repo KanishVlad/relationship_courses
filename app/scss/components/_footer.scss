@@ -3,10 +3,40 @@
   padding: 100px 0;
   background-color: $text-dark;
 
+  @include r($pc) {
+    padding: 80px 0;
+  }
+
+  @include r($tb-2) {
+    padding: 60px 0;
+  }
+
+  @include r($tb) {
+    padding: 40px 0;
+  }
+
+  @include r($ph) {
+    padding: 30px 0;
+  }
+
+
+  &__logo {
+    margin-right: 10px;
+
+    @include r($tb) {
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+  }
+
 
   &__container {
     display: flex;
     align-items: center;
+
+    @include r($tb) {
+      flex-direction: column;
+    }
   }
 
   &__items {
@@ -14,6 +44,16 @@
     grid-template-columns: repeat(3, 2fr);
     gap: 15px 42px;
     margin: 0 auto;
+
+    @include r($tb-2) {
+      gap: 15px 0;
+    }
+
+    @include r($ph) {
+      grid-template-columns: repeat(2, 2fr);
+      gap: 20px 5px;
+      justify-items: center;
+    }
   }
 
   &__link {

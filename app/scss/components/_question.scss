@@ -6,10 +6,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include r($tb) {
+      flex-direction: column;
+    }
   }
 
   &__content {
     margin-right: 30px;
+
+    @include r($tb) {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
   }
 
   &__content-title {
@@ -17,6 +26,18 @@
     font-weight: 400;
     color: $text-white;
     margin-bottom: 32px;
+
+    @include r($tb-2) {
+      font-size: 32px;
+
+      margin-bottom: 25px;
+    }
+
+    @include r($tb) {
+      font-size: 24px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
   }
 
   &__content-text {
@@ -25,6 +46,11 @@
     color: $text-white;
     max-width: 541px;
     width: 100%;
+
+    @include r($tb) {
+      font-size: 18px;
+      text-align: center;
+    }
   }
 
 }

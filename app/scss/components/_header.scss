@@ -1,5 +1,19 @@
 .header {
   padding-top: 30px;
+
+  @include r($pc) {
+    padding-top: 25px;
+  }
+
+  @include r($tb-2) {
+    padding-top: 20px;
+  }
+
+  @include r($tb) {
+    padding-top: 15px;
+  }
+
+ 
 }
 
 .menu {
@@ -7,23 +21,129 @@
   align-items: center;
   margin-bottom: 10px;
 
+  @include r($tb) {
+    justify-content: space-between;
+
+    .burger {
+      width: 44px;
+      height: 44px;
+      position: relative;
+      color: #000000;
+      display: block;
+      z-index: 2;
+      border-radius: 3px;
+      transition: background-color 0.5s, box-shadow 0.5s;
+      order: 3;
+    }
+
+    .burger:focus {
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .burger:active {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .burger__line {
+      display: block;
+      position: absolute;
+      left: 17%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 68%;
+      height: 2px;
+      background-color: currentColor;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .burger::before,
+    .burger::after {
+      content: "";
+      position: absolute;
+      left: 17%;
+      width: 68%;
+      height: 2px;
+      background-color: currentColor;
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    .burger::before {
+      top: 11px;
+    }
+
+    .burger::after {
+      top: calc(100% - 13px);
+    }
+
+    .burger--active .burger__line {
+      transform: scale(0);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .burger--active::before {
+      transform: rotate(45deg);
+      top: 50%;
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    .burger--active::after {
+      transform: rotate(-45deg);
+      top: 50%;
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    .burger--active {
+      color: #000000;
+    }
+
+
+  }
+
   &__items {
     display: flex;
     align-items: center;
     gap: 53px;
     margin: 0 auto;
+
+    @include r($tb) {
+
+      position: fixed;
+      font-size: 24px;
+      font-weight: 700;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: $bg;
+      display: block;
+      text-align: center;
+      padding: 123px 0;
+      z-index: 1;
+      transform: translateX(-300%);
+      transition: transform 1s cubic-bezier(0.24, 0.26, 0.75, 0.75);
+    }
+
+    &--active {
+      transform: translateX(0);
+    }
+
   }
+
 
   &__item {
     gap: 53px;
-  }
 
-  &__link {
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
+    @include r($tb) {
 
+      margin-right: 0;
+      margin-bottom: 25px;
+    }
+
+    &__link {
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+  }
 }
-
-

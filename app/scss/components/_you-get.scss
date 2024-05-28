@@ -19,18 +19,85 @@
     &--bottom {
       margin-bottom: 25px;
     }
+
+    @include r($pc) {
+      max-width: 1000px;
+    }
+
+    @include r($tb-2) {
+      max-width: 800px;
+    }
+
+    @include r($tb) {
+      max-width: 600px;
+    }
+
+    @include r($ph) {
+      max-width: 450px;
+    }
+
+    @include r($phm) {
+      max-width: 400px;
+    }
+
   }
 
-    &__block:not(:last-child) {
-      margin-bottom: 40px;
+  &__block:not(:last-child) {
+    margin-bottom: 40px;
+
+    @include r($pc) {
+      margin-bottom: 25px;
     }
+
+    @include r($tb-2) {
+      margin-bottom: 20px;
+    }
+
+    @include r($tb) {
+      margin-bottom: 15px;
+    }
+
+  }
 
   &__content {
     padding: 44px 0 28px;
+    margin-right: 10px;
+
+    @include r($pc) {
+      padding: 24px 0 20px;
+    }
+
+    @include r($tb) {
+      padding: 18px 0 18px;
+    }
   }
 
   &__img {
     margin-right: 40px;
+
+    @include r($pc) {
+      margin-right: 20px;
+      width: 60px;
+      height: 60px;
+    }
+
+    @include r($tb-2) {
+      margin-right: 20px;
+      width: 50px;
+      height: 50px;
+    }
+
+    @include r($tb) {
+      margin-right: 20px;
+      width: 40px;
+      height: 40px;
+    }
+
+    @include r($tb) {
+      margin-right: 10px;
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &__text {
@@ -40,6 +107,29 @@
     width: 100%;
     text-align: justify;
     line-height: 30px;
+
+    @include r($pc) {
+      font-weight: 500;
+      max-width: 800px;
+    }
+
+    @include r($tb-2) {
+      max-width: 650px;
+    }
+
+    @include r($tb) {
+      max-width: 450px;
+    }
+
+    @include r($ph) {
+      max-width: 350px;
+      font-size: 14px;
+    }
+
+    @include r($phm) {
+      max-width: 230px;
+      font-size: 14px;
+    }
   }
 
 }
